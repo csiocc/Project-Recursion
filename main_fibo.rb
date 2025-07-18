@@ -10,6 +10,7 @@ Phi = (BigDecimal('1') + V5) / BigDecimal('2')
 a = 0
 b = 0
 i = 10
+
 # while a == b && i < 10_000
 
 def fibonachi(n)
