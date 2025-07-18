@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    bigdecimal (3.2.2)
+
+PLATFORMS
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  bigdecimal (~> 3.2)
+
+BUNDLED WITH
+   2.6.9
