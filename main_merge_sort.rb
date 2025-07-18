@@ -1,6 +1,6 @@
 DEBUG = false
 system 'clear'
-array2 = Array.new(50_00) { rand(1..50_000) }
+array2 = Array.new(500_000) { rand(1..5000) }
 
 ## my first own merge_sort
 #
@@ -129,7 +129,7 @@ def compare(a, b, c)
   p 'merge_sort result equals mysort result' if a == b
   p 'mysort result equals merge_sort_import result' if b == c
   p '100% match' if a == b && b == c
-  p 'a differs from b' if a != b
+  p 'merge_sort != mysort' if a != b
 end
 
 compare(a, b, c)
