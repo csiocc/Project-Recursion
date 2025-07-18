@@ -1,6 +1,6 @@
 DEBUG = false
 system 'clear'
-array2 = Array.new(500_000) { rand(1..5000) }
+array2 = Array.new(25_000) { rand(1..5000) }
 
 ## my first own merge_sort
 #
@@ -108,22 +108,22 @@ start_t = Time.now
 a = merge_sort(array2)
 end_t = Time.now
 aexecute_t = (end_t.to_f - start_t.to_f) * 1000
-p "Time to execute merge_sort: #{aexecute_t}ms" if aexecute_t < 1000
-p "Time to execute merge_sort: #{aexecute_t / 1000} Sekunden}" if aexecute_t > 1000
+p "Time to execute merge_sort: #{aexecute_t.to_f.round(4)}ms" if aexecute_t < 1000
+p "Time to execute merge_sort: #{(aexecute_t / 1000).to_f.round(4)} Sekunden}" if aexecute_t > 1000
 
 start_t = Time.now
 b = mysort(array2)
 end_t = Time.now
 bexecute_t = (end_t.to_f - start_t.to_f) * 1000
-p "Time to execute mysort: #{bexecute_t}ms" if bexecute_t < 1000
-p "Time to execute mysort: #{bexecute_t / 1000} Sekunden}" if bexecute_t > 1000
+p "Time to execute mysort: #{bexecute_t.to_f.round(4)}ms" if bexecute_t < 1000
+p "Time to execute mysort: #{(bexecute_t / 1000).to_f.round(4)} Sekunden}" if bexecute_t > 1000
 
 start_t = Time.now
 c = merge_sort_import(array2)
 end_t = Time.now
 cexecute_t = (end_t.to_f - start_t.to_f) * 1000
-p "Time to execute merge_sort_import: #{cexecute_t}ms" if cexecute_t < 1000
-p "Time to execute merge_sort_import: #{cexecute_t / 1000} Sekunden}" if cexecute_t > 1000
+p "Time to execute merge_sort_import: #{cexecute_t.to_f.round(4)}ms" if cexecute_t < 1000
+p "Time to execute merge_sort_import: #{(cexecute_t / 1000).to_f.round(4)} Sekunden}" if cexecute_t > 1000
 
 def compare(a, b, c)
   p 'merge_sort result equals mysort result' if a == b
