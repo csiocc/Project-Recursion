@@ -1,7 +1,6 @@
 DEBUG = false
 system 'clear'
-array2 = Array.new(25_000) { rand(1..5000) }
-
+array2 = Array.new(250_000) { rand(1..5000) }
 ## my first own merge_sort
 #
 def merge_sort(array)
@@ -39,7 +38,7 @@ def mysort(array)
   grouped = array.group_by { |e| e }
   hash_valued = grouped.map do |key, count|
     [key, { value: key, count: count }]
-  end.to_h
+  end
   p hash_valued if DEBUG
   hash_valued.each do |key, data|
     p "#{key} inserting on #{data[:value] - 1}" if DEBUG
@@ -60,8 +59,8 @@ def merge_sort_import(array)
   left_side = array[0...middle]
   right_side = array[middle...array_size]
 
-  sorted_left = merge_sort(left_side)
-  sorted_right = merge_sort(right_side)
+  sorted_left = merge_sort_import(left_side)
+  sorted_right = merge_sort_import(right_side)
 
   merge(array, sorted_left, sorted_right)
 
@@ -109,7 +108,7 @@ a = merge_sort(array2)
 end_t = Time.now
 aexecute_t = (end_t.to_f - start_t.to_f) * 1000
 p "Time to execute merge_sort: #{aexecute_t.to_f.round(4)}ms" if aexecute_t < 1000
-p "Time to execute merge_sort: #{(aexecute_t / 1000).to_f.round(4)} Sekunden}" if aexecute_t > 1000
+p "Time to execute merge_sort: #{(aexecute_t / 1000).to_f.round(4)} Sekunden" if aexecute_t > 1000
 
 start_t = Time.now
 b = mysort(array2)
